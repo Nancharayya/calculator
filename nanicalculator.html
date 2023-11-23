@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button{
+                height: 100px;
+                width: 100px;
+            }
+            #result{
+                height: 100px;
+                width: 400px;
+                background-color:peru;
+            }
+        </style>
+        <title>Calculator</title>
+        <body><center>
+            <h1>Calculator</h1>
+            <input type="text" placeholder="0" id="result">
+            <table>
+                <tr>
+                    <td><button onclick="display('7')">7</button></td>
+                    <td><button onclick="display('8')">8</button></td>
+                    <td><button onclick="display('9')">9</button></td>
+                    <td><button onclick="display('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="display('4')">4</button></td>
+                    <td><button onclick="display('5')">5</button></td>
+                    <td><button onclick="display('6')">6</button></td>
+                    <td><button onclick="display('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="display('3')">3</button></td>
+                    <td><button onclick="display('2')">2</button></td>
+                    <td><button onclick="display('1')">1</button></td>
+                    <td><button onclick="display('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="display('0')">0</button></td>
+                    <td><button onclick="clr()">C</button></td>
+                    <td><button onclick="Calculator()">=</td>
+                    <td><button onclick="display('/')">/</button></td>
+                </tr>
+            </table>
+        </center>
+    </body>
+    </head>
+</html> 
+<script>
+    var output=document.getElementById("result")
+    function display(num)
+    {
+        output.value+=num
+    }
+    function Calculator()
+    {
+        try{
+            output.value=eval(output.value);
+        }
+        catch(err){
+            alert("error")
+        }
+    }
+    function clr(){
+        output.value=""
+    }
+</script>
